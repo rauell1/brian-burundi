@@ -27,37 +27,37 @@ export default async function HomePage() {
   return (
     <main>
       <BreadcrumbStructuredData items={[{ name: "Home", path: "/" }]} />
-      <section className="hero-gradient pb-20 pt-28 lg:pb-32 lg:pt-40">
+      <section className="hero-gradient pb-20 pt-32 lg:pb-32 lg:pt-48">
         <div className="relative mx-auto grid max-w-7xl items-center gap-16 px-4 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-8">
           <MotionReveal>
-            <div className="text-white">
-              <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-sm font-medium backdrop-blur-md">
-                <Sparkles size={16} className="text-[#C9983C]" /> B2B Sales • Business Development • Partnerships
+            <div>
+              <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm font-medium text-[#888] backdrop-blur-md">
+                <span className="h-2 w-2 rounded-full bg-white animate-pulse" /> B2B Sales & Market Expansion
               </div>
-              <h1 className="mt-8 max-w-4xl font-display text-4xl font-bold leading-[1.15] tracking-tight sm:text-5xl lg:text-[4rem]">
-                Building partnerships that turn market opportunities into <span className="text-gradient-gold">sustainable growth.</span>
+              <h1 className="mt-8 max-w-4xl font-display text-5xl font-extrabold leading-[1.1] tracking-tighter sm:text-6xl lg:text-[4.5rem]">
+                Accelerating <span className="text-gradient-neon text-transparent">commercial growth</span> in emerging markets.
               </h1>
-              <p className="mt-6 text-lg leading-relaxed text-white/80">
+              <p className="mt-8 text-lg leading-relaxed text-[#888]">
                 Brian M. Burudi is a Nairobi-based B2B Sales Lead and business development professional with 5+ years of experience driving market development, strategic partnerships, customer acquisition, and revenue growth across electric mobility, healthcare, sustainability, technology, and connectivity.
               </p>
               <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
-                <ButtonLink href="/experience" className="rounded-full bg-[#C9983C] px-8 text-[#0B1F33] hover:bg-[#e0b665]">Explore My Experience <ArrowRight size={16} aria-hidden="true" /></ButtonLink>
-                <ButtonLink href="/contact" variant="outline" className="rounded-full border-white/30 text-white hover:bg-white hover:text-[#0B1F33]">Let’s Connect</ButtonLink>
-                <ButtonLink href={settings.cvUrl ?? publicContact.cvPath} variant="ghost" download className="rounded-full text-white/80 hover:text-white"><Download size={16} aria-hidden="true" /> Download CV</ButtonLink>
+                <ButtonLink href="/experience" variant="primary">Explore My Experience</ButtonLink>
+                <ButtonLink href="/contact" variant="outline">Let’s Connect</ButtonLink>
+                <ButtonLink href={settings.cvUrl ?? publicContact.cvPath} variant="ghost" download><Download size={16} aria-hidden="true" /> Download CV</ButtonLink>
               </div>
             </div>
           </MotionReveal>
 
           <MotionReveal delay={0.12}>
             <div className="relative mx-auto max-w-md lg:max-w-none">
-              <div className="rounded-[2.5rem] bg-white/10 p-2 backdrop-blur-xl">
-                <BrianPortrait src={settings.portraitUrl} className="aspect-[4/5] rounded-[2rem] border-0" />
+              <div className="rounded-[2.5rem] bg-white/5 p-2 backdrop-blur-xl border border-white/10">
+                <BrianPortrait src={settings.portraitUrl} className="aspect-[4/5] rounded-[2rem] border-0 mix-blend-luminosity opacity-80 transition hover:mix-blend-normal hover:opacity-100" />
               </div>
-              <div className="glass-panel absolute -bottom-8 left-4 right-4 rounded-2xl p-6 sm:left-auto sm:right-8 sm:w-80">
-                <div className="space-y-4 text-sm font-semibold text-[#16202A]">
-                  <p className="flex items-center gap-3"><MapPin className="size-5 shrink-0 text-[#C9983C]" aria-hidden="true" /> Nairobi, Kenya</p>
-                  <p className="flex items-center gap-3"><BriefcaseBusiness className="size-5 shrink-0 text-[#C9983C]" aria-hidden="true" /> 5+ years of experience</p>
-                  <p className="flex items-center gap-3"><Handshake className="size-5 shrink-0 text-[#C9983C]" aria-hidden="true" /> B2B sales and partnerships</p>
+              <div className="glass-panel absolute -bottom-8 left-4 right-4 rounded-2xl p-6 sm:left-auto sm:right-8 sm:w-80 border-t border-l border-white/20">
+                <div className="space-y-4 text-sm font-medium text-[#ededed]">
+                  <p className="flex items-center gap-3"><MapPin className="size-5 shrink-0 text-[#888]" aria-hidden="true" /> Nairobi, Kenya</p>
+                  <p className="flex items-center gap-3"><BriefcaseBusiness className="size-5 shrink-0 text-[#888]" aria-hidden="true" /> 5+ years of experience</p>
+                  <p className="flex items-center gap-3"><Handshake className="size-5 shrink-0 text-[#888]" aria-hidden="true" /> B2B sales and partnerships</p>
                 </div>
               </div>
             </div>
@@ -73,21 +73,20 @@ export default async function HomePage() {
           <div className="prose-executive mt-6 whitespace-pre-line text-lg">{professionalSummary}</div>
         </MotionReveal>
         <MotionReveal delay={0.1}>
-          <Card className="p-6">
-            <h3 className="text-xl font-bold text-[#0B1F33]">Career qualities</h3>
-            <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
+          <div className="bento-card p-8 h-full">
+            <h3 className="text-xl font-display font-bold text-[#ededed]">Career qualities</h3>
+            <div className="mt-6 flex flex-col gap-4">
               {careerQualities.map((quality) => (
-                <div key={quality} className="flex items-center gap-3 rounded-2xl border border-[#DDE3E9] bg-[#F7F8FA] p-4">
-                  <CheckCircle2 className="size-5 shrink-0 text-[#16847A]" aria-hidden="true" />
-                  <span className="font-semibold text-[#16202A]">{quality}</span>
+                <div key={quality} className="flex items-center gap-4 rounded-xl border border-white/5 bg-white/5 p-4 transition hover:bg-white/10">
+                  <span className="font-medium text-[#888]">{quality}</span>
                 </div>
               ))}
             </div>
-          </Card>
+          </div>
         </MotionReveal>
       </section>
 
-      <section className="bg-white py-20">
+      <section className="py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Impact snapshot"
@@ -108,19 +107,19 @@ export default async function HomePage() {
         </div>
         <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {expertisePillars.slice(0, 6).map((pillar) => (
-            <Card key={pillar.title} className="executive-shadow border-0 bg-white">
-              <CardContent className="pt-6">
-                <ShieldCheck className="size-9 text-[#16847A]" aria-hidden="true" />
-                <h3 className="mt-4 text-xl font-bold text-[#0B1F33]">{pillar.title}</h3>
-                <p className="mt-3 text-sm leading-7 text-[#5D6875]">{pillar.explanation}</p>
-                <a href={`/expertise#${pillar.slug}`} className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-[#174A7E] hover:text-[#0B1F33]">Explore pillar <ArrowRight size={15} aria-hidden="true" /></a>
-              </CardContent>
-            </Card>
+            <div key={pillar.title} className="bento-card flex flex-col justify-between p-8">
+              <div>
+                <ShieldCheck className="size-8 text-[#fff]" aria-hidden="true" />
+                <h3 className="mt-6 text-xl font-display font-bold text-[#ededed]">{pillar.title}</h3>
+                <p className="mt-4 text-sm leading-relaxed text-[#888]">{pillar.explanation}</p>
+              </div>
+              <a href={`/expertise#${pillar.slug}`} className="mt-8 inline-flex items-center gap-2 text-sm font-bold text-[#fff] opacity-50 hover:opacity-100 transition">Explore pillar <ArrowRight size={15} aria-hidden="true" /></a>
+            </div>
           ))}
         </div>
       </section>
 
-      <section className="bg-[#F0F4F7] py-20">
+      <section className="py-20 border-y border-white/5 bg-[#050505]">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
             <SectionHeading eyebrow="Experience" title="A timeline of business development, sales, and partnership leadership." />
@@ -136,22 +135,20 @@ export default async function HomePage() {
         <SectionHeading eyebrow="Selected impact stories" title="Evidence-led examples of commercial contribution." description="These examples avoid unverified claims and describe Brian’s contribution using confirmed CV information." align="center" />
         <div className="mt-10 grid gap-6 lg:grid-cols-3">
           {caseStudies.map((study) => (
-            <Card key={study.title} className="executive-shadow border-0 bg-white">
-              <CardContent className="pt-6">
-                <Badge>{study.organization}</Badge>
-                <h3 className="mt-4 text-xl font-bold text-[#0B1F33]">{study.title}</h3>
-                <div className="mt-5 space-y-4 text-sm leading-7 text-[#5D6875]">
-                  <p><strong className="text-[#16202A]">Challenge:</strong> {study.challenge}</p>
-                  <p><strong className="text-[#16202A]">Contribution:</strong> {study.contribution}</p>
-                  <p><strong className="text-[#16202A]">Verified outcome:</strong> {study.outcome}</p>
-                </div>
-              </CardContent>
-            </Card>
+            <div key={study.title} className="bento-card p-8">
+              <div className="inline-block rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-[#fff]">{study.organization}</div>
+              <h3 className="mt-6 text-xl font-display font-bold text-[#ededed]">{study.title}</h3>
+              <div className="mt-6 space-y-4 text-sm leading-relaxed text-[#888]">
+                <p><strong className="text-white">Challenge:</strong> {study.challenge}</p>
+                <p><strong className="text-white">Contribution:</strong> {study.contribution}</p>
+                <p><strong className="text-white">Outcome:</strong> {study.outcome}</p>
+              </div>
+            </div>
           ))}
         </div>
       </section>
 
-      <section className="bg-[#0B1F33] py-20 text-white">
+      <section className="py-20 border-t border-white/5">
         <div className="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[1fr_auto] lg:items-center lg:px-8">
           <div>
             <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#C9983C]">Let’s build</p>

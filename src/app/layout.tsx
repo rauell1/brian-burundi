@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Outfit } from "next/font/google";
+import { Inter, Space_Grotesk } from "next/font/google";
 import type { ReactNode } from "react";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
@@ -10,7 +10,7 @@ import { CustomCursor } from "@/components/ui/custom-cursor";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
-const outfit = Outfit({ subsets: ["latin"], variable: "--font-outfit", display: "swap" });
+const space = Space_Grotesk({ subsets: ["latin"], variable: "--font-space", display: "swap" });
 
 const title = "Brian M. Burudi | B2B Sales, Business Development & Strategic Partnerships";
 const description =
@@ -49,8 +49,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className={`${inter.variable} ${outfit.variable} scroll-smooth`}>
-      <body className="min-h-screen bg-[#F7F8FA] font-sans text-[#16202A] antialiased">
+    <html lang="en" className={`${inter.variable} ${space.variable} scroll-smooth`}>
+      <body className="min-h-screen font-sans antialiased">
         <SmoothScroller>
           <CustomCursor />
           <a className="skip-link" href="#main-content">

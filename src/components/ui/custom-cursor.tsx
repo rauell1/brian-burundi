@@ -55,19 +55,19 @@ export function CustomCursor() {
         }
       `}} />
       <motion.div
-        className="pointer-events-none fixed left-0 top-0 z-[9999] hidden h-8 w-8 items-center justify-center rounded-full border-2 border-[#C9983C] mix-blend-difference md:flex"
+        className="pointer-events-none fixed left-0 top-0 z-[9999] hidden h-8 w-8 items-center justify-center rounded-full border-2 border-white mix-blend-difference md:flex"
         style={{
           x: cursorX,
           y: cursorY,
         }}
         animate={{
           scale: cursorState === "hover" ? 1.5 : 1,
-          backgroundColor: cursorState === "hover" ? "rgba(201, 152, 60, 0.2)" : "transparent",
+          backgroundColor: cursorState === "hover" ? "rgba(255, 255, 255, 1)" : "transparent",
         }}
         transition={{ type: "spring", stiffness: 300, damping: 20 }}
       >
         <motion.div 
-          className="h-1 w-1 rounded-full bg-[#C9983C]" 
+          className="h-1 w-1 rounded-full bg-white mix-blend-difference" 
           animate={{ scale: cursorState === "hover" ? 0 : 1 }}
         />
       </motion.div>

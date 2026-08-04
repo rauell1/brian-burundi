@@ -43,15 +43,15 @@ export function SiteHeader() {
     <header
       className={cn(
         "sticky top-0 z-50 border-b transition",
-        scrolled ? "border-[#DDE3E9] bg-white/95 shadow-sm backdrop-blur" : "border-transparent bg-[#F7F8FA]/90 backdrop-blur",
+        scrolled ? "border-white/10 bg-[#000]/95 shadow-sm backdrop-blur" : "border-transparent bg-[#000]/90 backdrop-blur",
       )}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8" aria-label="Primary navigation">
-        <Link href="/" className="group flex items-center gap-3 rounded-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#C9983C]">
-          <span className="grid size-11 place-items-center rounded-full bg-[#0B1F33] text-sm font-bold tracking-wide text-white shadow-sm transition group-hover:bg-[#174A7E]">BB</span>
+        <Link href="/" className="group flex items-center gap-3 rounded-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#fff]">
+          <span className="grid size-11 place-items-center rounded-full bg-white text-sm font-display font-bold tracking-wide text-black shadow-sm transition group-hover:bg-[#e0e0e0]">BB</span>
           <span className="hidden leading-tight sm:block">
-            <span className="block text-sm font-bold text-[#0B1F33]">Brian M. Burudi</span>
-            <span className="block text-xs font-medium text-[#5D6875]">B2B Sales Lead</span>
+            <span className="block text-sm font-bold text-white">Brian M. Burudi</span>
+            <span className="block text-xs font-medium text-[#888]">B2B Sales & Expansion</span>
           </span>
         </Link>
 
@@ -64,8 +64,8 @@ export function SiteHeader() {
                 href={item.href}
                 aria-current={active ? "page" : undefined}
                 className={cn(
-                  "rounded-full px-4 py-2 text-sm font-semibold text-[#5D6875] transition hover:bg-white hover:text-[#0B1F33] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C9983C]",
-                  active && "bg-white text-[#0B1F33] shadow-sm ring-1 ring-[#DDE3E9] after:ml-2 after:text-[#C9983C] after:content-['•']",
+                  "rounded-full px-4 py-2 text-sm font-semibold text-[#888] transition hover:bg-white/10 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white",
+                  active && "bg-white/10 text-white shadow-sm ring-1 ring-white/20 after:ml-2 after:text-white after:content-['•']",
                 )}
               >
                 {item.label}
@@ -75,7 +75,7 @@ export function SiteHeader() {
         </div>
 
         <div className="hidden lg:block">
-          <ButtonLink href={publicContact.cvPath} variant="gold" download>
+          <ButtonLink href={publicContact.cvPath} variant="primary" download>
             Download CV
           </ButtonLink>
         </div>
@@ -83,7 +83,7 @@ export function SiteHeader() {
         <button
           ref={menuButtonRef}
           type="button"
-          className="inline-flex size-11 items-center justify-center rounded-full border border-[#DDE3E9] bg-white text-[#0B1F33] lg:hidden"
+          className="inline-flex size-11 items-center justify-center rounded-full border border-white/20 bg-transparent text-white lg:hidden"
           aria-expanded={open}
           aria-controls="mobile-navigation"
           aria-label={open ? "Close navigation menu" : "Open navigation menu"}
@@ -94,7 +94,7 @@ export function SiteHeader() {
       </nav>
 
       {open ? (
-        <div id="mobile-navigation" className="border-t border-[#DDE3E9] bg-white px-4 py-4 shadow-lg lg:hidden">
+        <div id="mobile-navigation" className="border-t border-white/10 bg-[#111] px-4 py-4 shadow-lg lg:hidden">
           <div className="mx-auto flex max-w-7xl flex-col gap-2" role="menu">
             {navItems.map((item, index) => {
               const active = item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
@@ -106,15 +106,15 @@ export function SiteHeader() {
                   role="menuitem"
                   aria-current={active ? "page" : undefined}
                   className={cn(
-                    "rounded-2xl px-4 py-3 text-base font-semibold text-[#5D6875] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C9983C]",
-                    active ? "bg-[#F7F8FA] text-[#0B1F33]" : "hover:bg-[#F7F8FA] hover:text-[#0B1F33]",
+                    "rounded-2xl px-4 py-3 text-base font-semibold text-[#888] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white",
+                    active ? "bg-white/10 text-white" : "hover:bg-white/5 hover:text-white",
                   )}
                 >
                   {item.label}
                 </Link>
               );
             })}
-            <ButtonLink href={publicContact.cvPath} variant="gold" className="mt-2 w-full" download>
+            <ButtonLink href={publicContact.cvPath} variant="primary" className="mt-2 w-full" download>
               Download CV
             </ButtonLink>
           </div>

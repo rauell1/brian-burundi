@@ -12,15 +12,15 @@ type SharedProps = {
 };
 
 const variants: Record<Variant, string> = {
-  primary: "bg-[#0B1F33] text-white shadow-sm hover:bg-[#174A7E]",
-  secondary: "bg-[#16847A] text-white shadow-sm hover:bg-[#126c64]",
-  outline: "border border-[#DDE3E9] bg-white text-[#0B1F33] hover:border-[#174A7E] hover:bg-[#F7F8FA]",
-  ghost: "text-[#0B1F33] hover:bg-[#EEF3F7]",
-  gold: "bg-[#C9983C] text-[#0B1F33] shadow-sm hover:bg-[#d6aa54]",
+  primary: "bg-[#fff] text-[#000] hover:bg-[#e0e0e0] hover:shadow-[0_0_15px_rgba(255,255,255,0.4)]",
+  secondary: "bg-[#222] text-white border border-white/10 hover:bg-[#333] hover:border-white/30",
+  outline: "border border-white/20 bg-transparent text-white hover:border-white/80 hover:bg-white/5",
+  ghost: "text-[#888] hover:bg-white/5 hover:text-white",
+  gold: "bg-white text-black hover:bg-[#e0e0e0]",
 };
 
 const base =
-  "inline-flex min-h-11 items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C9983C] disabled:pointer-events-none disabled:opacity-50";
+  "inline-flex min-h-11 items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#fff] disabled:pointer-events-none disabled:opacity-50";
 
 export function Button({ variant = "primary", className, ...props }: SharedProps & ButtonHTMLAttributes<HTMLButtonElement>) {
   return (
