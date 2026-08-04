@@ -12,44 +12,45 @@
 html {
   text-rendering: optimizeLegibility;
   scroll-behavior: smooth;
-  background-color: #000000;
+  background-color: #fafafa;
 }
 
 body {
   overflow-x: hidden;
-  background-color: #000000;
-  color: #ededed;
+  background-color: #fafafa;
+  color: #111111;
   background-image: 
-    radial-gradient(circle at 15% 50%, rgba(255, 255, 255, 0.04), transparent 25%),
-    radial-gradient(circle at 85% 30%, rgba(255, 255, 255, 0.04), transparent 25%);
+    radial-gradient(circle at 15% 50%, rgba(0, 0, 0, 0.02), transparent 25%),
+    radial-gradient(circle at 85% 30%, rgba(0, 0, 0, 0.02), transparent 25%);
 }
 
 ::selection {
-  background: #ededed;
-  color: #000000;
+  background: #111111;
+  color: #fafafa;
 }
 
 /* Modern UI Utilities */
 .glass-panel {
-  background: rgba(25, 25, 25, 0.4);
+  background: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .bento-card {
-  background: rgba(15, 15, 15, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
   border-radius: 1.5rem;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
   overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
 }
 
 .bento-card:hover {
-  background: rgba(25, 25, 25, 0.8);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 0 30px rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+  transform: translateY(-2px);
 }
 
 .hero-gradient {
@@ -62,12 +63,12 @@ body {
   content: "";
   position: absolute;
   top: -50%; left: -50%; right: -50%; bottom: -50%;
-  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.05) 0%, transparent 40%);
+  background: radial-gradient(circle at center, rgba(0, 0, 0, 0.03) 0%, transparent 40%);
   pointer-events: none;
 }
 
 .text-gradient-neon {
-  background: linear-gradient(to right, #fff, #888);
+  background: linear-gradient(to right, #111, #666);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -81,8 +82,8 @@ body {
   z-index: 100;
   transform: translateY(-150%);
   border-radius: 999px;
-  background: #fff;
-  color: #000;
+  background: #111;
+  color: #fff;
   padding: 0.75rem 1rem;
   font-weight: 700;
   transition: transform 160ms ease;
@@ -90,7 +91,7 @@ body {
 
 .skip-link:focus {
   transform: translateY(0);
-  outline: 3px solid #fff;
+  outline: 3px solid #111;
   outline-offset: 3px;
 }
 
@@ -100,12 +101,12 @@ body {
 }
 
 .focus-ring:focus-visible {
-  outline-color: #fff;
+  outline-color: #111;
 }
 
 .prose-executive p {
   margin-top: 1.5rem;
-  color: #888;
+  color: #555;
   line-height: 1.8;
 }
 
