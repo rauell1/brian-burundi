@@ -27,37 +27,39 @@ export default async function HomePage() {
   return (
     <main>
       <BreadcrumbStructuredData items={[{ name: "Home", path: "/" }]} />
-      <section className="relative overflow-hidden bg-[#F7F8FA]">
-        <div className="absolute inset-x-0 top-0 h-64 bg-[#0B1F33]" aria-hidden="true" />
-        <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-4 py-14 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:py-24">
+      <section className="hero-gradient pb-20 pt-28 lg:pb-32 lg:pt-40">
+        <div className="relative mx-auto grid max-w-7xl items-center gap-16 px-4 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-8">
           <MotionReveal>
-            <div className="rounded-[2rem] bg-white p-6 shadow-[0_28px_80px_rgba(11,31,51,0.12)] sm:p-10">
-              <Badge>B2B Sales • Business Development • Partnerships</Badge>
-              <h1 className="mt-6 max-w-4xl font-display text-4xl font-bold tracking-tight text-[#0B1F33] sm:text-5xl lg:text-6xl">
-                Building partnerships that turn market opportunities into sustainable growth.
+            <div className="text-white">
+              <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-sm font-medium backdrop-blur-md">
+                <Sparkles size={16} className="text-[#C9983C]" /> B2B Sales • Business Development • Partnerships
+              </div>
+              <h1 className="mt-8 max-w-4xl font-display text-4xl font-bold leading-[1.15] tracking-tight sm:text-5xl lg:text-[4rem]">
+                Building partnerships that turn market opportunities into <span className="text-gradient-gold">sustainable growth.</span>
               </h1>
-              <p className="mt-6 text-lg leading-8 text-[#5D6875]">
+              <p className="mt-6 text-lg leading-relaxed text-white/80">
                 Brian M. Burudi is a Nairobi-based B2B Sales Lead and business development professional with 5+ years of experience driving market development, strategic partnerships, customer acquisition, and revenue growth across electric mobility, healthcare, sustainability, technology, and connectivity.
               </p>
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-                <ButtonLink href="/experience">Explore My Experience <ArrowRight size={16} aria-hidden="true" /></ButtonLink>
-                <ButtonLink href="/contact" variant="outline">Let’s Connect</ButtonLink>
-                <ButtonLink href={settings.cvUrl ?? publicContact.cvPath} variant="ghost" download><Download size={16} aria-hidden="true" /> Download CV</ButtonLink>
+              <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
+                <ButtonLink href="/experience" className="rounded-full bg-[#C9983C] px-8 text-[#0B1F33] hover:bg-[#e0b665]">Explore My Experience <ArrowRight size={16} aria-hidden="true" /></ButtonLink>
+                <ButtonLink href="/contact" variant="outline" className="rounded-full border-white/30 text-white hover:bg-white hover:text-[#0B1F33]">Let’s Connect</ButtonLink>
+                <ButtonLink href={settings.cvUrl ?? publicContact.cvPath} variant="ghost" download className="rounded-full text-white/80 hover:text-white"><Download size={16} aria-hidden="true" /> Download CV</ButtonLink>
               </div>
             </div>
           </MotionReveal>
 
           <MotionReveal delay={0.12}>
             <div className="relative mx-auto max-w-md lg:max-w-none">
-              <BrianPortrait src={settings.portraitUrl} className="aspect-[4/5]" />
-              <Card className="absolute -bottom-6 left-4 right-4 border-[#C9983C]/40 bg-white/95 backdrop-blur sm:left-auto sm:right-6 sm:w-72">
-                <CardContent className="space-y-3 pt-6 text-sm font-semibold text-[#16202A]">
-                  <p className="flex items-center gap-2"><MapPin className="size-4 text-[#C9983C]" aria-hidden="true" /> Nairobi, Kenya</p>
-                  <p className="flex items-center gap-2"><BriefcaseBusiness className="size-4 text-[#C9983C]" aria-hidden="true" /> 5+ years of professional experience</p>
-                  <p className="flex items-center gap-2"><Handshake className="size-4 text-[#C9983C]" aria-hidden="true" /> B2B sales and partnerships</p>
-                  <p className="flex items-center gap-2"><Sparkles className="size-4 text-[#C9983C]" aria-hidden="true" /> Open to strategic opportunities</p>
-                </CardContent>
-              </Card>
+              <div className="rounded-[2.5rem] bg-white/10 p-2 backdrop-blur-xl">
+                <BrianPortrait src={settings.portraitUrl} className="aspect-[4/5] rounded-[2rem] border-0" />
+              </div>
+              <div className="glass-panel absolute -bottom-8 left-4 right-4 rounded-2xl p-6 sm:left-auto sm:right-8 sm:w-80">
+                <div className="space-y-4 text-sm font-semibold text-[#16202A]">
+                  <p className="flex items-center gap-3"><MapPin className="size-5 shrink-0 text-[#C9983C]" aria-hidden="true" /> Nairobi, Kenya</p>
+                  <p className="flex items-center gap-3"><BriefcaseBusiness className="size-5 shrink-0 text-[#C9983C]" aria-hidden="true" /> 5+ years of experience</p>
+                  <p className="flex items-center gap-3"><Handshake className="size-5 shrink-0 text-[#C9983C]" aria-hidden="true" /> B2B sales and partnerships</p>
+                </div>
+              </div>
             </div>
           </MotionReveal>
         </div>
@@ -106,7 +108,7 @@ export default async function HomePage() {
         </div>
         <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {expertisePillars.slice(0, 6).map((pillar) => (
-            <Card key={pillar.title} className="transition hover:-translate-y-1">
+            <Card key={pillar.title} className="executive-shadow border-0 bg-white">
               <CardContent className="pt-6">
                 <ShieldCheck className="size-9 text-[#16847A]" aria-hidden="true" />
                 <h3 className="mt-4 text-xl font-bold text-[#0B1F33]">{pillar.title}</h3>
@@ -134,7 +136,7 @@ export default async function HomePage() {
         <SectionHeading eyebrow="Selected impact stories" title="Evidence-led examples of commercial contribution." description="These examples avoid unverified claims and describe Brian’s contribution using confirmed CV information." align="center" />
         <div className="mt-10 grid gap-6 lg:grid-cols-3">
           {caseStudies.map((study) => (
-            <Card key={study.title}>
+            <Card key={study.title} className="executive-shadow border-0 bg-white">
               <CardContent className="pt-6">
                 <Badge>{study.organization}</Badge>
                 <h3 className="mt-4 text-xl font-bold text-[#0B1F33]">{study.title}</h3>

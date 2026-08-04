@@ -48,7 +48,7 @@ export function OrganizationStrip() {
 
 export function MetricCard({ metric }: { metric: ImpactMetricContent }) {
   return (
-    <Card className="h-full p-6 transition hover:-translate-y-1 hover:shadow-[0_24px_60px_rgba(11,31,51,0.09)]">
+    <Card className="executive-shadow h-full border-0 bg-white p-6">
       <p className="font-display text-4xl font-bold text-[#0B1F33]">
         {metric.prefix}{metric.value}{metric.suffix}
       </p>
@@ -74,7 +74,7 @@ export function ExperienceTimeline({ experiences, compact = false }: { experienc
           </div>
           <div className={index % 2 === 0 ? "md:col-start-2" : "md:row-start-1"}>
             <span className="absolute left-2 top-1.5 grid size-5 place-items-center rounded-full bg-[#C9983C] ring-8 ring-[#F7F8FA] md:left-1/2 md:-translate-x-1/2" aria-hidden="true" />
-            <Card className="ml-10 md:ml-0">
+            <Card className="executive-shadow ml-10 border-0 bg-white md:ml-0">
               <CardContent className="pt-6">
                 <p className="text-sm leading-7 text-[#5D6875]">{experience.summary}</p>
                 {!compact ? (
