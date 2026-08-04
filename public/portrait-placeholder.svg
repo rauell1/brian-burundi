@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="860" viewBox="0 0 720 860" role="img" aria-labelledby="title desc">
+  <title id="title">Brian M. Burudi portrait placeholder</title>
+  <desc id="desc">Professional navy and gold monogram placeholder used when Brian.jpeg is not available.</desc>
+  <rect width="720" height="860" fill="#0B1F33"/>
+  <circle cx="360" cy="288" r="132" fill="#174A7E"/>
+  <rect x="122" y="486" width="476" height="220" rx="110" fill="#174A7E"/>
+  <circle cx="560" cy="170" r="54" fill="#16847A" opacity="0.55"/>
+  <circle cx="160" cy="720" r="68" fill="#C9983C" opacity="0.35"/>
+  <text x="360" y="303" text-anchor="middle" font-family="Arial, sans-serif" font-size="92" font-weight="700" fill="#FFFFFF">BB</text>
+  <text x="360" y="625" text-anchor="middle" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#FFFFFF">Brian M. Burudi</text>
+  <text x="360" y="672" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" fill="#DDE3E9">B2B Sales • Partnerships</text>
+</svg>
