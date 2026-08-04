@@ -38,7 +38,7 @@ export default async function HomePage() {
                 Accelerating <span className="text-gradient-neon text-transparent">commercial growth</span> in emerging markets.
               </h1>
               <p className="mt-8 text-lg leading-relaxed text-[#555]">
-                Brian M. Burudi is a Nairobi-based B2B Sales Lead and business development professional with 5+ years of experience driving market development, strategic partnerships, customer acquisition, and revenue growth across electric mobility, healthcare, sustainability, technology, and connectivity.
+                I partner with growth-stage companies and established organizations to build strategic partnerships, expand into emerging markets, and accelerate B2B revenue across Africa.
               </p>
               <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
                 <ButtonLink href="/experience" variant="primary">Explore My Experience</ButtonLink>
@@ -69,12 +69,12 @@ export default async function HomePage() {
 
       <section className="mx-auto grid max-w-7xl gap-10 px-4 py-20 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-8">
         <MotionReveal>
-          <SectionHeading eyebrow="Professional summary" title="Commercial discipline with cross-sector market experience." />
+          <SectionHeading eyebrow="Executive Summary" title="Commercial discipline with cross-sector market experience." />
           <div className="prose-executive mt-6 whitespace-pre-line text-lg">{professionalSummary}</div>
         </MotionReveal>
         <MotionReveal delay={0.1}>
           <div className="bento-card p-8 h-full">
-            <h3 className="text-xl font-display font-bold text-[#111]">Career qualities</h3>
+            <h3 className="text-xl font-display font-bold text-[#111]">The Value I Deliver</h3>
             <div className="mt-6 flex flex-col gap-4">
               {careerQualities.map((quality) => (
                 <div key={quality} className="flex items-center gap-4 rounded-xl border border-black/5 bg-black/5 p-4 transition hover:bg-black/10">
@@ -102,8 +102,8 @@ export default async function HomePage() {
 
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
         <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
-          <SectionHeading eyebrow="Expertise" title="Commercial capabilities for growth-stage and institutional environments." description="Brian brings a practical mix of sales, partnerships, account management, and go-to-market execution capabilities." />
-          <ButtonLink href="/expertise" variant="outline">View all expertise</ButtonLink>
+          <SectionHeading eyebrow="Core Capabilities" title="How I help your business scale and succeed." description="I bring a practical mix of enterprise sales, strategic partnerships, account management, and go-to-market execution." />
+          <ButtonLink href="/expertise" variant="outline">View all capabilities</ButtonLink>
         </div>
         <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {expertisePillars.slice(0, 6).map((pillar) => (
@@ -139,9 +139,9 @@ export default async function HomePage() {
               <div className="inline-block rounded-full border border-black/10 bg-black/5 px-3 py-1 text-xs font-medium text-[#111]">{study.organization}</div>
               <h3 className="mt-6 text-xl font-display font-bold text-[#111]">{study.title}</h3>
               <div className="mt-6 space-y-4 text-sm leading-relaxed text-[#555]">
-                <p><strong className="text-black">Challenge:</strong> {study.challenge}</p>
-                <p><strong className="text-black">Contribution:</strong> {study.contribution}</p>
-                <p><strong className="text-black">Outcome:</strong> {study.outcome}</p>
+                <p><strong className="text-black">The Challenge:</strong> {study.challenge}</p>
+                <p><strong className="text-black">My Contribution:</strong> {study.contribution}</p>
+                <p><strong className="text-black">The Outcome:</strong> {study.outcome}</p>
               </div>
             </div>
           ))}
@@ -151,9 +151,9 @@ export default async function HomePage() {
       <section className="py-20 border-t border-black/5">
         <div className="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[1fr_auto] lg:items-center lg:px-8">
           <div>
-            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#555]">Let’s build</p>
-            <h2 className="mt-3 font-display text-3xl font-extrabold sm:text-4xl text-[#111]">Let’s build the next growth opportunity.</h2>
-            <p className="mt-4 max-w-3xl text-lg leading-8 text-[#555]">Brian is open to conversations about B2B sales leadership, strategic partnerships, market development, commercial growth, and customer acquisition opportunities.</p>
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#555]">Let’s collaborate</p>
+            <h2 className="mt-3 font-display text-3xl font-extrabold sm:text-4xl text-[#111]">Partner with me to scale your commercial footprint.</h2>
+            <p className="mt-4 max-w-3xl text-lg leading-8 text-[#555]">Whether you are looking to expand your market presence, streamline your sales pipeline, or forge high-value partnerships, let's connect and build your next growth opportunity.</p>
           </div>
           <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
             <ButtonLink href="/contact" variant="gold">Let’s Connect</ButtonLink>

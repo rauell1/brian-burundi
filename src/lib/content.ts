@@ -73,15 +73,15 @@ export const pendingOrganizationNote =
   "Roles, dates, and achievements for SasaPay, Peleza, and Byon must be verified with Brian before being published.";
 
 export const professionalSummary =
-  "Brian M. Burudi is a results-driven B2B Sales Lead with more than five years of experience advancing revenue growth, strategic partnerships, and market development across clean energy, healthcare, sustainability, connectivity, financial technology, and other technology-enabled sectors in Kenya.\n\nHis experience spans full-cycle B2B sales, key account management, lead generation, CRM management, franchise development, enterprise onboarding, stakeholder engagement, and go-to-market execution. He is particularly skilled at translating customer and market needs into commercially viable partnerships that create long-term value.";
+  "I am a results-driven B2B Sales Lead and Commercial Growth Consultant with over five years of experience partnering with organizations to accelerate revenue, build strategic partnerships, and expand market presence across Kenya and emerging markets.\n\nMy expertise spans full-cycle enterprise sales, key account management, franchise development, and go-to-market execution. Whether you are scaling operations in clean energy, health tech, sustainability, or connectivity, I translate your market needs into commercially viable partnerships that deliver long-term, measurable value.";
 
 export const careerQualities = [
-  "Commercially driven",
-  "Customer focused",
-  "Partnership oriented",
-  "Data informed",
-  "Sustainability conscious",
-  "Experienced in Kenyan markets",
+  "Driving Commercial Growth",
+  "Forging Strategic Partnerships",
+  "Scaling Market Operations",
+  "Delivering Data-Informed Strategy",
+  "Building Enterprise Pipelines",
+  "Unlocking Emerging Markets",
 ];
 
 export const defaultExperiences: ExperienceContent[] = [
@@ -355,15 +355,15 @@ export const expertisePillars = [
     title: "B2B Sales Strategy",
     slug: "b2b-sales-strategy",
     icon: "line-chart",
-    explanation: "Designing disciplined sales motions that qualify opportunities, develop pipeline visibility, forecast realistically, and move enterprise deals toward closure.",
+    explanation: "I design and execute disciplined sales motions that qualify high-value opportunities, build transparent pipeline visibility, and move your enterprise deals toward closure.",
     skills: ["Full-cycle enterprise sales", "Sales pipeline development", "Sales forecasting", "Prospect qualification", "Deal progression and closure"],
     organizations: ["Roam Electric", "Seeds for Sustainability Europe", "Surf Kenya"],
   },
   {
-    title: "Business Development",
-    slug: "business-development",
+    title: "Market Expansion",
+    slug: "market-expansion",
     icon: "briefcase-business",
-    explanation: "Identifying new market opportunities and converting customer needs into practical commercial propositions that support sustainable growth.",
+    explanation: "I identify untapped market opportunities and convert your target audience's needs into practical, commercial propositions that support sustainable footprint growth.",
     skills: ["Market-entry support", "Opportunity identification", "Customer acquisition", "Revenue-growth planning", "New market development"],
     organizations: ["Seeds for Sustainability Europe", "AMREF Flying Doctors", "Jibu Incorporated"],
   },
@@ -371,7 +371,7 @@ export const expertisePillars = [
     title: "Strategic Partnerships",
     slug: "strategic-partnerships",
     icon: "handshake",
-    explanation: "Building stakeholder trust across institutions, enterprises, and customer ecosystems through structured outreach, proposals, and commercial negotiation.",
+    explanation: "I build long-term stakeholder trust across institutions, enterprises, and complex ecosystems through structured outreach, compelling proposals, and rigorous commercial negotiation.",
     skills: ["Partnership prospecting", "Stakeholder mapping", "Relationship development", "Institutional partnerships", "Commercial negotiations"],
     organizations: ["Ponea Health", "AMREF Flying Doctors", "Roam Electric"],
   },
@@ -379,7 +379,7 @@ export const expertisePillars = [
     title: "Key Account Management",
     slug: "key-account-management",
     icon: "users-round",
-    explanation: "Managing customer relationships beyond acquisition through onboarding, issue resolution, account development, and repeat-business discipline.",
+    explanation: "I protect and grow your revenue by managing customer relationships far beyond initial acquisition—driving onboarding, issue resolution, and repeat-business discipline.",
     skills: ["Customer lifecycle management", "Client onboarding", "Retention and relationship growth", "Issue resolution", "Repeat-business development"],
     organizations: ["Roam Electric", "Ponea Health", "Seeds for Sustainability Europe"],
   },
@@ -387,15 +387,15 @@ export const expertisePillars = [
     title: "Go-to-Market Execution",
     slug: "go-to-market-execution",
     icon: "target",
-    explanation: "Turning strategy into market activity through research, product demonstrations, competitor intelligence, and cross-functional feedback loops.",
+    explanation: "I translate high-level strategy into aggressive, on-the-ground market activity through deep competitor intelligence, high-impact product demonstrations, and cross-functional agility.",
     skills: ["Customer research", "Competitor intelligence", "Product demonstrations", "Market positioning", "Cross-functional collaboration"],
     organizations: ["Roam Electric", "Jibu Incorporated", "Surf Kenya"],
   },
   {
-    title: "Team and Network Development",
-    slug: "team-network-development",
+    title: "Network Development",
+    slug: "network-development",
     icon: "network",
-    explanation: "Building and enabling distributed teams, franchise operators, and agent networks with onboarding, training, standards, and performance tracking.",
+    explanation: "I build, train, and enable highly effective distributed teams, franchise operators, and agent networks with strict operational standards and performance-tracking frameworks.",
     skills: ["Franchise development", "Agent recruitment", "Team training", "Operational onboarding", "Performance management"],
     organizations: ["Jibu Incorporated", "Surf Kenya / Express Wi‑Fi by Facebook", "WWF Kenya"],
   },
@@ -404,27 +404,27 @@ export const expertisePillars = [
 export const sectors = [
   {
     title: "Electric mobility and clean energy",
-    description: "Brian applies enterprise sales, fleet-customer engagement, cost-efficiency positioning, demonstrations, and onboarding coordination to support commercial electric-mobility adoption.",
+    description: "I drive enterprise fleet sales and position cost-efficiency models to accelerate the commercial adoption of sustainable mobility solutions.",
   },
   {
     title: "Healthcare and health technology",
-    description: "His healthcare work emphasizes institutional relationship development, presentations, proposals, negotiation, CRM discipline, and client issue resolution.",
+    description: "I build robust institutional relationships, negotiate high-value contracts, and streamline CRM disciplines across the healthcare ecosystem.",
   },
   {
     title: "Sustainability and ESG",
-    description: "Brian’s sustainability exposure supports responsible-business conversations, pipeline development, proposals, and customer education around ESG-focused services.",
+    description: "I educate stakeholders and develop structured B2B pipelines for responsible-business and ESG-focused technology services.",
   },
   {
     title: "Water and social enterprise",
-    description: "In franchise environments, Brian’s transferable strengths include team training, customer growth, operating standards, compliance, and technology adoption.",
+    description: "I scale franchise networks by enforcing strict operating standards, optimizing technology adoption, and leading comprehensive team training.",
   },
   {
     title: "Conservation and non-profit fundraising",
-    description: "Public engagement and relationship-building experience helps Brian communicate mission value clearly while developing donor and partner relationships.",
+    description: "I clearly communicate mission value to establish and grow long-lasting donor relationships and institutional funding partnerships.",
   },
   {
     title: "Connectivity and telecommunications",
-    description: "Brian has verified experience scaling SME agent operations, field-sales execution, performance tracking, and regional launch activity for connectivity access.",
+    description: "I have verified experience launching regional operations, recruiting agent networks, and executing aggressive field-sales strategies.",
   },
   {
     title: "Financial technology",
