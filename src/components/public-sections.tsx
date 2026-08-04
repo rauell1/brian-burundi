@@ -7,8 +7,6 @@ import { organizationNames } from "@/lib/content";
 import { formatDateRange } from "@/lib/utils";
 import type { ExperienceContent, ImpactMetricContent } from "@/lib/content";
 import { motion } from "framer-motion";
-import { formatDateRange } from "@/lib/utils";
-import type { ExperienceContent, ImpactMetricContent } from "@/lib/content";
 
 export function PageIntro({ eyebrow, title, description }: { eyebrow: string; title: string; description: string }) {
   return (
