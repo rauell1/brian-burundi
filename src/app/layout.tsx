@@ -5,6 +5,8 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { PersonStructuredData, ProfilePageStructuredData } from "@/components/structured-data";
 import { siteUrl } from "@/lib/utils";
+import { SmoothScroller } from "@/components/ui/smooth-scroller";
+import { CustomCursor } from "@/components/ui/custom-cursor";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
@@ -49,14 +51,17 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={`${inter.variable} ${outfit.variable} scroll-smooth`}>
       <body className="min-h-screen bg-[#F7F8FA] font-sans text-[#16202A] antialiased">
-        <a className="skip-link" href="#main-content">
-          Skip to content
-        </a>
-        <PersonStructuredData />
-        <ProfilePageStructuredData />
-        <SiteHeader />
-        <div id="main-content">{children}</div>
-        <SiteFooter />
+        <SmoothScroller>
+          <CustomCursor />
+          <a className="skip-link" href="#main-content">
+            Skip to content
+          </a>
+          <PersonStructuredData />
+          <ProfilePageStructuredData />
+          <SiteHeader />
+          <div id="main-content">{children}</div>
+          <SiteFooter />
+        </SmoothScroller>
       </body>
     </html>
   );

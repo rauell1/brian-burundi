@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from "react";
 import { cn } from "@/lib/utils";
+import { MagneticWrapper } from "@/components/ui/magnetic-wrapper";
 
 type Variant = "primary" | "secondary" | "outline" | "ghost" | "gold";
 
@@ -22,13 +23,22 @@ const base =
   "inline-flex min-h-11 items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C9983C] disabled:pointer-events-none disabled:opacity-50";
 
 export function Button({ variant = "primary", className, ...props }: SharedProps & ButtonHTMLAttributes<HTMLButtonElement>) {
-  return <button className={cn(base, variants[variant], className)} {...props} />;
+  return (
+    <MagneticWrapper className="inline-block">
+      <button className={cn(base, variants[variant], className)} {...props} />
+    </MagneticWrapper>
+  );
 }
 
 export function ButtonLink({ variant = "primary", className, href, ...props }: SharedProps & AnchorHTMLAttributes<HTMLAnchorElement> & { href: string }) {
   const isExternal = href.startsWith("http");
-  if (isExternal) {
-    return <a className={cn(base, variants[variant], className)} href={href} target="_blank" rel="noreferrer" {...props} />;
-  }
-  return <Link className={cn(base, variants[variant], className)} href={href} {...props} />;
+  return (
+    <MagneticWrapper className="inline-block">
+      {isExternal ? (
+        <a className={cn(base, variants[variant], className)} href={href} target="_blank" rel="noreferrer" {...props} />
+      ) : (
+        <Link className={cn(base, variants[variant], className)} href={href} {...props} />
+      )}
+    </MagneticWrapper>
+  );
 }

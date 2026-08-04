@@ -6,6 +6,9 @@ import { Card, CardContent } from "@/components/ui/card";
 import { organizationNames } from "@/lib/content";
 import { formatDateRange } from "@/lib/utils";
 import type { ExperienceContent, ImpactMetricContent } from "@/lib/content";
+import { motion } from "framer-motion";
+import { formatDateRange } from "@/lib/utils";
+import type { ExperienceContent, ImpactMetricContent } from "@/lib/content";
 
 export function PageIntro({ eyebrow, title, description }: { eyebrow: string; title: string; description: string }) {
   return (
@@ -30,16 +33,33 @@ export function SectionHeading({ eyebrow, title, description, align = "left" }: 
 }
 
 export function OrganizationStrip() {
+  const marqueeItems = [...organizationNames, ...organizationNames];
+
   return (
-    <section className="border-y border-[#DDE3E9] bg-white">
-      <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-        <p className="text-center text-sm font-semibold uppercase tracking-[0.18em] text-[#5D6875]">Experience across respected organizations and growth-stage companies</p>
-        <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
-          {organizationNames.map((name) => (
-            <div key={name} className="flex min-h-16 items-center justify-center rounded-2xl border border-[#DDE3E9] bg-[#F7F8FA] px-4 text-center text-sm font-bold text-[#0B1F33]">
-              {name}
-            </div>
-          ))}
+    <section className="border-y border-[#DDE3E9] bg-white overflow-hidden">
+      <div className="py-8">
+        <p className="mb-6 px-4 text-center text-sm font-semibold uppercase tracking-[0.18em] text-[#5D6875]">
+          Experience across respected organizations and growth-stage companies
+        </p>
+        <div className="relative flex w-full">
+          <motion.div
+            className="flex gap-4 px-2"
+            animate={{ x: ["0%", "-50%"] }}
+            transition={{
+              duration: 25,
+              ease: "linear",
+              repeat: Infinity,
+            }}
+          >
+            {marqueeItems.map((name, i) => (
+              <div
+                key={`${name}-${i}`}
+                className="flex h-16 min-w-[200px] shrink-0 items-center justify-center rounded-2xl border border-[#DDE3E9] bg-[#F7F8FA] px-6 text-center text-sm font-bold text-[#0B1F33]"
+              >
+                {name}
+              </div>
+            ))}
+          </motion.div>
         </div>
       </div>
     </section>
