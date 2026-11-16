@@ -10,8 +10,21 @@ if (!databaseUrl) {
 
 type Db = NodePgDatabase<typeof schema> & { $client: Pool };
 
+/**
+ * On Cloudflare the database is reached through Hyperdrive (the HYPERDRIVE
+ * binding in wrangler.jsonc), which keeps connections to Neon open near the
+ * database instead of opening a new TLS connection on every request.
+ * DATABASE_URL is used everywhere else (Node, scripts, tests).
+ */
+function hyperdriveConnectionString(): string | undefined {
+  const context = (globalThis as Record<symbol, unknown>)[Symbol.for("__cloudflare-context__")] as
+    | { env?: { HYPERDRIVE?: { connectionString?: string } } }
+    | undefined;
+  return context?.env?.HYPERDRIVE?.connectionString;
+}
+
 function createDb(): Db {
-  const pool = new Pool({ connectionString: databaseUrl });
+  const pool = new Pool({ connectionString: hyperdriveConnectionString() || databaseUrl });
   return drizzle(pool, { schema });
 }
 

@@ -12,6 +12,14 @@
   // Runtime secrets are set with `npx wrangler secret put NAME` or in the Cloudflare dashboard.
   "keep_vars": true,
   "workers_dev": true,
+  // Pooled connections to the Neon production database. Query caching is off,
+  // so reads always see the latest writes. localConnectionString is only for
+  // local tooling (wrangler dev, the OpenNext deploy step).
+  "hyperdrive": [{
+    "binding": "HYPERDRIVE",
+    "id": "cbf4d45b035e4dd994211d5f1619abe3",
+    "localConnectionString": "postgresql://postgres:postgres@localhost:5432/dev"
+  }],
   "observability": { "enabled": true },
   // Page cache for open-next.config.ts.
   "kv_namespaces": [
