@@ -18,7 +18,7 @@ The site positions Brian for recruiters, executives, employers, partners, consul
 - Resend email notifications, optional
 - Lucide React icons
 - Framer Motion for subtle reduced-motion-aware reveals
-- Vercel deployment target
+- Cloudflare Workers deployment target
 
 ## Folder structure
 
@@ -72,7 +72,7 @@ Never commit real secrets.
 2. Create or select the production database.
 3. Copy the pooled connection string for `DATABASE_URL`.
 4. Copy the direct connection string for `DIRECT_URL` if you use migration tooling that requires it.
-5. Add both values to `.env` locally and to Vercel project settings.
+5. Add both values to `.env` locally and as Cloudflare Worker secrets.
 
 ## Database migrations
 
@@ -112,7 +112,7 @@ The admin area is available at `/admin` and login is at `/admin/login`.
 
 To create the first administrator securely:
 
-1. Set `ADMIN_EMAIL`, `ADMIN_PASSWORD`, and `AUTH_SECRET` locally or in Vercel.
+1. Set `ADMIN_EMAIL`, `ADMIN_PASSWORD`, and `AUTH_SECRET` locally or as Cloudflare Worker secrets.
 2. Apply migrations.
 3. Run `node scripts/seed.mjs`, or sign in once and the configured admin record will be created.
 4. Keep `ADMIN_PASSWORD` private and rotate it through environment configuration when needed.
@@ -163,31 +163,29 @@ public/Brian-M-Burudi-CV.pdf
 
 To replace the CV, overwrite that file or update the `cvUrl` setting in `/admin` to a durable hosted asset path.
 
-## Vercel deployment
+## Cloudflare deployment
 
-1. Push the repository to GitHub, GitLab, or Bitbucket.
-2. Create a new Vercel project.
-3. Connect the repository.
-4. Add environment variables:
-   - `DATABASE_URL`
-   - `DIRECT_URL`
+The site runs on Cloudflare Workers through the OpenNext Cloudflare adapter (`open-next.config.ts`, `wrangler.jsonc`). `.github/workflows/deploy-cloudflare.yml` builds and deploys on every push to `main`.
+
+1. Add repository secrets: `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`, `DATABASE_URL` and `AUTH_SECRET` (the build prerenders pages from the database). Add the repository variable `NEXT_PUBLIC_SITE_URL`.
+2. Add Worker secrets with `npx wrangler secret put NAME` or in the Cloudflare dashboard:
+   - `DATABASE_URL` (Neon pooled connection string)
    - `AUTH_SECRET`
    - `ADMIN_EMAIL`
    - `ADMIN_PASSWORD`
    - `RESEND_API_KEY`, optional
    - `CONTACT_NOTIFICATION_EMAIL`, optional
-   - `NEXT_PUBLIC_SITE_URL`
-5. Deploy.
-6. Run migrations against Neon from a secure local environment or CI step.
-7. Run `node scripts/seed.mjs` after the schema is ready.
+3. Run migrations against Neon from a secure local environment or CI step.
+4. Run `node scripts/seed.mjs` after the schema is ready.
+5. Check locally with `npm run cf:preview` and the variables in a `.dev.vars` file.
+
+On Workers the database pool is created per request (`src/db/index.ts`), because Workers cannot share a socket between requests.
 
 ## Connecting a custom domain
 
-1. In Vercel, open Project Settings → Domains.
-2. Add the desired domain.
-3. Follow Vercel’s DNS instructions.
-4. Update `NEXT_PUBLIC_SITE_URL` to the production domain.
-5. Redeploy so canonical URLs, sitemap, and Open Graph metadata use the correct domain.
+1. Add a route to `wrangler.jsonc`, for example `{ "pattern": "example.com", "custom_domain": true }`. The domain's DNS must be on the same Cloudflare account.
+2. Update `NEXT_PUBLIC_SITE_URL` to the production domain.
+3. Redeploy so canonical URLs, sitemap, and Open Graph metadata use the correct domain.
 
 ## SEO and discoverability
 
