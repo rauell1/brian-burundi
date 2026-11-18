@@ -25,9 +25,13 @@
     "localConnectionString": "postgresql://postgres:postgres@localhost:5432/dev"
   }],
   "observability": { "enabled": true },
-  // Page cache for open-next.config.ts.
+  // Page cache for open-next.config.ts (pages kept in R2; the bucket was
+  // created ahead of the deploy).
+  "r2_buckets": [
+    { "binding": "NEXT_INC_CACHE_R2_BUCKET", "bucket_name": "brian-burudi-next-cache" }
+  ],
+  // Tag cache for revalidatePath/revalidateTag (open-next.config.ts).
   "kv_namespaces": [
-    { "binding": "NEXT_INC_CACHE_KV", "id": "51559703ba654a5c80ba80d070fb1e0f" },
     { "binding": "NEXT_TAG_CACHE_KV", "id": "47bb1bb5059a4d2ea5801b5c0603530e" }
   ]
 }
