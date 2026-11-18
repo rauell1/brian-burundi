@@ -6,7 +6,7 @@ import { rateLimit } from "@/lib/rate-limit";
 import { contactFormSchema } from "@/lib/validators";
 
 function getClientIp(request: NextRequest) {
-  return request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || request.headers.get("x-real-ip") || "unknown";
+  return request.headers.get("cf-connecting-ip")?.trim() || request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || request.headers.get("x-real-ip") || "unknown";
 }
 
 export async function POST(request: NextRequest) {
