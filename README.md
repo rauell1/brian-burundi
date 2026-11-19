@@ -1,6 +1,6 @@
 # Brian M. Burudi Portfolio
 
-A production-ready executive portfolio website for **Brian M. Burudi** — B2B Sales Lead, Business Development, and Strategic Partnerships professional based in Nairobi, Kenya.
+A production-ready executive portfolio website for **Brian M. Burudi** - B2B Sales Lead, Business Development, and Strategic Partnerships professional based in Nairobi, Kenya.
 
 The site positions Brian for recruiters, executives, employers, partners, consulting clients, investors, and organizations seeking commercial growth leadership across electric mobility, healthcare, sustainability, fintech, conservation, connectivity, and technology-enabled services.
 
@@ -233,3 +233,32 @@ All published experience, metrics, education, certifications, and case-study con
 **Roles, dates, and achievements for SasaPay, Peleza, and Byon must be verified with Brian before being published.**
 
 These organizations are included in the public organization wall and as unpublished database placeholders only. Do not publish role titles, dates, descriptions, or achievements for them until Brian confirms the details.
+
+## Project information
+
+| | |
+|---|---|
+| Live site | https://brian-burudi.rauell.workers.dev |
+| Hosting | Cloudflare Workers |
+| Default branch | `main` |
+| Repository | Public |
+
+### Stack
+
+- Next.js 16 (App Router), React 19, TypeScript, Tailwind CSS 4
+- Drizzle ORM with Neon PostgreSQL through Cloudflare Hyperdrive
+- Resend for contact form notifications
+
+### Deployment
+
+Production runs on Cloudflare Workers at https://brian-burudi.rauell.workers.dev. `.github/workflows/deploy-cloudflare.yml` builds and deploys on every push to `main`, using the `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` repository secrets. Public build-time values are repository variables; runtime secrets are Worker secrets.
+
+### Contributing and security
+
+- How to set up, test and submit changes: [CONTRIBUTING.md](CONTRIBUTING.md)
+- How to report a vulnerability: [SECURITY.md](SECURITY.md)
+- Expected behaviour in project spaces: [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
+
+### Licence
+
+No open-source licence has been granted. The code, content and brand assets belong to the project owner and all rights are reserved. Ask the owner before reusing any part of this repository.
