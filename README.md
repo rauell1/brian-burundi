@@ -1,4 +1,20 @@
-# Brian M. Burudi Portfolio
+<!-- header:start -->
+<div align="center">
+
+# Brian M. Burudi: portfolio
+
+**Executive portfolio website for Brian M. Burudi (B2B sales, business development and strategic partnerships, Nairobi), with an admin dashboard and contact form.**
+
+[![Live: brian-burudi.rauell.workers.dev](https://img.shields.io/badge/Live-brian--burudi.rauell.workers.dev-0d9488?style=for-the-badge&logo=cloudflare&logoColor=white)](https://brian-burudi.rauell.workers.dev) ![Status: live](https://img.shields.io/badge/Status-Live-2ea44f?style=for-the-badge) ![Public repository](https://img.shields.io/badge/Repo-Public-555555?style=for-the-badge&logo=github)
+
+![TypeScript](https://img.shields.io/badge/TypeScript-3178c6?style=flat-square&logo=typescript&logoColor=white) ![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white) ![Drizzle](https://img.shields.io/badge/Drizzle-c5f74f?style=flat-square&logo=drizzle&logoColor=white) ![Neon Postgres](https://img.shields.io/badge/Neon_Postgres-00e599?style=flat-square&logo=postgresql&logoColor=white) ![Cloudflare Workers](https://img.shields.io/badge/Cloudflare_Workers-f38020?style=flat-square&logo=cloudflare&logoColor=white) ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06b6d4?style=flat-square&logo=tailwindcss&logoColor=white)
+
+[Live site](https://brian-burudi.rauell.workers.dev) · [Contributing](CONTRIBUTING.md) · [Security](SECURITY.md) · [Code of conduct](CODE_OF_CONDUCT.md)
+
+</div>
+
+---
+<!-- header:end -->
 
 A production-ready executive portfolio website for **Brian M. Burudi** - B2B Sales Lead, Business Development, and Strategic Partnerships professional based in Nairobi, Kenya.
 
