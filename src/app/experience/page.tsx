@@ -8,8 +8,8 @@ import { getPublishedExperiences } from "@/lib/data";
 
 // Rendered once and cached (open-next.config.ts); admin edits refresh it
 // through revalidatePath in src/app/admin/actions.ts, and it is rebuilt at
-// most every five minutes otherwise.
-export const revalidate = 300;
+// most once a day otherwise.
+export const revalidate = 86400;
 
 export const metadata: Metadata = {
   title: "Experience",
